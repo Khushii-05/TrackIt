@@ -2,8 +2,7 @@
 import { useTasks } from "@/context/taskContext";
 import { useUserContext } from "@/context/userContext";
 import useDetectOutside from "@/hooks/useDetectOutside";
-import { badge, check, github, mail } from "@/utils/Icons";
-import Image from "next/image";
+import { mail } from "@/utils/Icons";
 import React from "react";
 
 function ProfileModal() {
@@ -42,30 +41,7 @@ function ProfileModal() {
       >
         <div className="absolute left-0 top-0 w-full h-[80px] bg-[#323232]/10 rounded-tr-md rounded-tl-md"></div>
 
-        <div className="mt-4 relative flex justify-between">
-          <div className="relative inline-block">
-            <Image
-              src={photo}
-              alt="profile"
-              width={80}
-              height={80}
-              className="rounded-full"
-            />
-            <div className="absolute bottom-0 right-1 shadow-sm">
-              <span className="text-lg text-blue-400">{badge}</span>
-              <span className="absolute z-20 left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] text-xs text-white">
-                {check}
-              </span>
-            </div>
-          </div>
-          <div className="self-end flex items-center gap-2">
-            <button className="flex items-center gap-2 border-2 border-[#323232]/10 rounded-md py-1 px-3 text-xs font-medium text-[#323232]">
-              {github} Github
-            </button>
-            <button className="flex items-center gap-2 border-2 border-[#323232]/10 rounded-md py-1 px-3 text-xs font-medium text-[#323232]">
-              {check} Verified
-            </button>
-          </div>
+        <div className="mt-4 relative">
         </div>
         <div>
           <h1 className="text-lg font-bold">{name}</h1>
