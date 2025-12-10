@@ -1,6 +1,6 @@
 # Task Manager Application
 
-A full-stack task management application built with Next.js, Node.js, Express, and MongoDB.
+TrackIt - A full-stack task management application
 
 ## Features
 
