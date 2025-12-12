@@ -23,20 +23,9 @@ const UserSchema = new mongoose.Schema(
       required: [true, "Please add password!"],
     },
 
-    photo: {
-      type: String,
-      default: "https://avatars.githubusercontent.com/u/19819005?v=4",
-    },
-
     bio: {
       type: String,
       default: "I am a new user.",
-    },
-
-    role: {
-      type: String,
-      enum: ["user", "admin", "creator"],
-      default: "user",
     },
   },
   { timestamps: true, minimize: true }

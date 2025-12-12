@@ -14,7 +14,6 @@ export const UserContextProvider = ({ children }) => {
   const router = useRouter();
 
   const [user, setUser] = useState({});
-  const [allUsers, setAllUsers] = useState([]);
   const [userState, setUserState] = useState({
     name: "",
     email: "",
@@ -286,8 +285,6 @@ export const UserContextProvider = ({ children }) => {
         user,
         updateUser,
         changePassword,
-        allUsers,
-        deleteUser,
       }}
     >
       {children}

@@ -19,7 +19,7 @@ function ProfileModal() {
     },
   });
 
-  const { name, email, photo } = user;
+  const { name, email } = user;
 
   //state
   const [oldPassword, setOldPassword] = React.useState("");

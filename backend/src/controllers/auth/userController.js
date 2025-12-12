@@ -48,15 +48,13 @@ export const registerUser = asyncHandler(async (req, res) => {
   });
 
   if (user) {
-    const { _id, name, email, role, photo, bio } = user;
+    const { _id, name, email, bio } = user;
 
     // 201 Created
     res.status(201).json({
       _id,
       name,
       email,
-      role,
-      photo,
       bio,
       token,
     });
@@ -95,7 +93,7 @@ export const loginUser = asyncHandler(async (req, res) => {
   const token = generateToken(userExists._id);
 
   if (userExists && isMatch) {
-    const { _id, name, email, role, photo, bio } = userExists;
+    const { _id, name, email, bio } = userExists;
 
     // set the token in the cookie
     res.cookie("token", token, {
@@ -111,8 +109,6 @@ export const loginUser = asyncHandler(async (req, res) => {
       _id,
       name,
       email,
-      role,
-      photo,
       bio,
       token,
     });
@@ -153,11 +149,10 @@ export const updateUser = asyncHandler(async (req, res) => {
 
   if (user) {
     // user properties to update
-    const { name, bio, photo } = req.body;
+    const { name, bio } = req.body;
     // update user properties
     user.name = req.body.name || user.name;
     user.bio = req.body.bio || user.bio;
-    user.photo = req.body.photo || user.photo;
 
     const updated = await user.save();
 
@@ -165,8 +160,6 @@ export const updateUser = asyncHandler(async (req, res) => {
       _id: updated._id,
       name: updated.name,
       email: updated.email,
-      role: updated.role,
-      photo: updated.photo,
       bio: updated.bio,
     });
   } else {
