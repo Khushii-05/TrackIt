@@ -56,14 +56,3 @@ export const creatorMiddleware = asyncHandler(async (req, res, next) => {
   // if not creator, send 403 Forbidden --> terminate the request
   res.status(403).json({ message: "Only creators can do this!" });
 });
-
-// verified middleware
-export const verifiedMiddleware = asyncHandler(async (req, res, next) => {
-  if (req.user && req.user.isVerified) {
-    // if user is verified, move to the next middleware/controller
-    next();
-    return;
-  }
-  // if not verified, send 403 Forbidden --> terminate the request
-  res.status(403).json({ message: "Please verify your email address!" });
-});
